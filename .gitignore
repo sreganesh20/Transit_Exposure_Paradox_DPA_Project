@@ -1,0 +1,23 @@
+# Large raw datasets
+data/raw/
+
+# R temporary files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Temporary files
+*.tmp
+*.log
+*.zip
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Python cache (if used later)
+__pycache__/
+*.pyc
+
+# Keep processed datasets, scripts, and outputs

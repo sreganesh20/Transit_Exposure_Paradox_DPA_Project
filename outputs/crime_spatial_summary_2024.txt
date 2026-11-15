@@ -1,0 +1,56 @@
+CSP 571 - THE TRANSIT EXPOSURE PARADOX
+STEP 3: 2024 CRIME + CTA STATION SPATIAL QUERY JOIN
+Generated: 2026-11-15 12:16:40.526632
+Original downloaded crime records: 258641
+2024 crimes before coordinate validation: 258641
+2024 crimes with valid coordinates after ID deduplication: 256583
+2024 crimes with missing/invalid geography: 2058
+CTA stations processed: 142
+CTA stations excluded due to invalid geography/entries: 2
+Radii (meters): 250, 500, 750
+Spatial query records generated: 426
+Stations with overlapping 500m buffers: 103
+Spearman correlation, 500m raw-count vs activity-adjusted ranks: 0.7128
+
+TOP 15 STATIONS BY 500M RAW REPORTED-CRIME COUNT:
+                              station_name reported_crimes_2024 total_entries_2024
+                                Washington                 4231            2359565
+                                State/Lake                 4108            2567516
+                                    Monroe                 4071            1103491
+                                      Lake                 4052            3402145
+                                    Monroe                 3890            1248238
+                         Washington/Wabash                 3841            2104434
+                                Clark/Lake                 3771            2801486
+                                     Grand                 3473            2194888
+                              Adams/Wabash                 3427            1335052
+                                   Jackson                 3205            1090452
+                                   Jackson                 3100            1278097
+                          Washington/Wells                 2825            1267269
+                                   Chicago                 2613            2510545
+ Harold Washington Library-State/Van Buren                 2162             778953
+                          Merchandise Mart                 2101            1182954
+ crimes_per_100k_entries raw_count_rank activity_adjusted_rank
+                179.3127              1                     39
+                159.9990              2                     45
+                368.9201              3                     14
+                119.1013              4                     58
+                311.6393              5                     20
+                182.5194              6                     37
+                134.6071              7                     51
+                158.2313              8                     47
+                256.6941              9                     26
+                293.9148             10                     22
+                242.5481             11                     27
+                222.9203             12                     32
+                104.0810             13                     68
+                277.5520             14                     23
+                177.6062             15                     40
+
+INTERPRETATION WARNINGS:
+- Nearby crime records are NOT proof that a crime occurred on CTA property.
+- CTA station entries are NOT total pedestrian exposure or individual risk.
+- Crime locations are block-level approximate; 250m circles are sensitive to this.
+- Overlapping buffers intentionally share incidents. Never sum station counts as unique crimes.
+- Station coordinates may reflect a newer station network than in 2024.
+- Stations beyond Chicago city limits and boundary-truncated buffers are not filtered yet.
+- Original UCI query geometries will be integrated in a later stage.

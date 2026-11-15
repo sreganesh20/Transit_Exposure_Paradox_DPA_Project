@@ -1,0 +1,72 @@
+CSP 571 - THE TRANSIT EXPOSURE PARADOX
+STEP 1: UCI DATASET BASELINE INVENTORY
+Generated: 2026-11-15 11:37:54.426882
+Source: https://archive.ics.uci.edu/dataset/493/query%2Banalytics%2Bworkloads%2Bdataset
+NOTE: Rows are spatial queries, NOT individual crime incidents.
+
+=== Radius-Queries.csv ===
+Rows: 50000 | Columns: 3
+Column names: X-coordinate, Y-coordinate, R-Radius
+First three rows:
+  X-coordinate  Y-coordinate  R-Radius
+1   0.09002792 -0.0161710532 0.3512156
+2   0.32625997 -0.0005701178 0.3795570
+3   0.04691309 -0.0542942072 0.2929246
+Summary:
+  X-coordinate        Y-coordinate         R-Radius       
+ Min.   :-0.002056   Min.   :-0.17906   Min.   :-0.05831  
+ 1st Qu.: 0.088610   1st Qu.:-0.09041   1st Qu.: 0.31198  
+ Median : 0.109007   Median :-0.05900   Median : 0.37886  
+ Mean   : 0.180156   Mean   :-0.06298   Mean   : 0.37906  
+ 3rd Qu.: 0.325008   3rd Qu.:-0.01898   3rd Qu.: 0.44679  
+ Max.   : 0.373041   Max.   : 0.02584   Max.   : 0.79775  
+
+=== Radius-Queries-Count.csv ===
+Rows: 10000 | Columns: 4
+Column names: X-coordinate, Y-coordinate, R-Radius, Count
+First three rows:
+  X-coordinate Y-coordinate  R-Radius Count
+1   0.17044554    0.2517649 0.1045635   251
+2   0.16118338    0.1222470 0.1098966   408
+3   0.09752579    0.1241232 0.1006910   468
+Summary:
+  X-coordinate      Y-coordinate        R-Radius          Count      
+ Min.   :0.02978   Min.   :0.07424   Min.   :0.1000   Min.   :  2.0  
+ 1st Qu.:0.08025   1st Qu.:0.13273   1st Qu.:0.1026   1st Qu.:229.0  
+ Median :0.09570   Median :0.15140   Median :0.1051   Median :277.0  
+ Mean   :0.11469   Mean   :0.17579   Mean   :0.1050   Mean   :264.8  
+ 3rd Qu.:0.15783   3rd Qu.:0.23469   3rd Qu.:0.1075   3rd Qu.:351.0  
+ Max.   :0.20179   Max.   :0.27766   Max.   :0.1100   Max.   :695.0  
+
+Count zero fraction: 0
+Count median: 277
+
+=== Range-Queries-Aggregates.csv ===
+Rows: 200000 | Columns: 8
+Column names: , x, y, x_range, y_range, count, sum_, avg
+First three rows:
+          x       y  x_range   y_range  count  sum_      avg
+1 0 1159191 1894756 5225.376 2981.7284  96046 34927 1111.619
+2 1 1159293 1898922 3499.176 6879.3522 152668 54847 1192.856
+3 3 1160321 1903776 6495.797  854.8983  22297  5082 1260.095
+Summary:
+                        x                 y              x_range             y_range         
+ Min.   :     0   Min.   :1149843   Min.   :1862018   Min.   :   0.0109   Min.   :2.180e-02  
+ 1st Qu.: 62466   1st Qu.:1157427   1st Qu.:1878072   1st Qu.:2019.0449   1st Qu.:3.916e+03  
+ Median :124922   Median :1159591   Median :1884029   Median :4041.2711   Median :7.852e+03  
+ Mean   :124903   Mean   :1162689   Mean   :1889317   Mean   :4041.7687   Mean   :7.850e+03  
+ 3rd Qu.:187243   3rd Qu.:1162272   3rd Qu.:1900768   3rd Qu.:6064.1634   3rd Qu.:1.178e+04  
+ Max.   :249999   Max.   :1185386   Max.   :1923187   Max.   :8090.4207   Max.   :1.570e+04  
+                                                                                             
+     count             sum_             avg        
+ Min.   :     0   Min.   :     0   Min.   : 131.6  
+ 1st Qu.: 38603   1st Qu.: 10927   1st Qu.: 887.1  
+ Median :110458   Median : 32163   Median : 954.8  
+ Mean   :159553   Mean   : 47932   Mean   :1042.7  
+ 3rd Qu.:237845   3rd Qu.: 71534   3rd Qu.:1259.0  
+ Max.   :985284   Max.   :347441   Max.   :2249.7  
+                                   NA's   :157     
+
+Count zero fraction: 8e-04
+Count median: 110457.5
+

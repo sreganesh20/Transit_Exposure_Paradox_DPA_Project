@@ -1,0 +1,32 @@
+CSP 571 - THE TRANSIT EXPOSURE PARADOX
+STEP 2: CTA RIDERSHIP + STATION GEOGRAPHY
+Generated: 2026-11-15 11:55:37.828781
+Period: calendar year 2024 (366 days)
+Daily station-entry rows: 52522
+Unique station IDs in 2024 ridership: 144
+Parent station IDs with valid location: 144
+Ridership stations matched to geography: 144
+Ridership stations WITHOUT valid geography: 0
+Stations with fewer than 366 reporting days: 1
+Total entries across all ridership stations: 108,217,182
+NOTE: Entries count turnstile entries, not all people in nearby streets.
+NOTE: Station location file may reflect a newer system than 2024.
+NOTE: Some CTA stations are outside Chicago; geographic filtering comes later.
+
+TOP 15 STATIONS BY 2024 ENTRIES:
+ station_id      station_name total_entries_2024 days_reported
+      41660              Lake            3402145           366
+      40890            O'Hare            3131064           366
+      40380        Clark/Lake            2801486           366
+      40260        State/Lake            2567516           366
+      41450           Chicago            2510545           366
+      41220         Fullerton            2508533           366
+      41400         Roosevelt            2387022           366
+      40370        Washington            2359565           366
+      41320           Belmont            2299184           366
+      40330             Grand            2194888           366
+      41700 Washington/Wabash            2104434           366
+      41420           Addison            1979053           366
+      40540            Wilson            1764169           366
+      40630    Clark/Division            1623086           366
+      40930            Midway            1599477           366

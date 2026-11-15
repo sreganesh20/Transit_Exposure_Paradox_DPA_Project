@@ -1,0 +1,4 @@
+"file","n_rows","n_columns","columns"
+"Radius-Queries.csv",50000,3,"X-coordinate | Y-coordinate | R-Radius"
+"Radius-Queries-Count.csv",10000,4,"X-coordinate | Y-coordinate | R-Radius | Count"
+"Range-Queries-Aggregates.csv",200000,8," | x | y | x_range | y_range | count | sum_ | avg"
