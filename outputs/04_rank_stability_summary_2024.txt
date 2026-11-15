@@ -1,0 +1,50 @@
+CSP 571 - THE TRANSIT EXPOSURE PARADOX
+STEP 4A: SPATIAL QUERY RANKING SENSITIVITY
+Generated: 2026-11-15 13:23:57.460916
+Stations compared at all radii: 142
+Radii: 250 m, 500 m, 750 m
+
+WITHIN-RADIUS: RAW VS RIDERSHIP-ADJUSTED RANKS
+ radius_m stations spearman_raw_vs_adjusted median_absolute_rank_shift mean_absolute_rank_shift
+      250      142                   0.7143                         19                    22.99
+      500      142                   0.7128                         22                    23.75
+      750      142                   0.7011                         22                    24.23
+ stations_shifted_20_or_more_places zero_crime_station_queries
+                                 69                         19
+                                 77                         19
+                                 79                         16
+
+CROSS-RADIUS: RANK CONSISTENCY AND TOP-10 OVERLAP
+ radius_a_m radius_b_m spearman_raw_count_ranks spearman_adjusted_ranks raw_top10_overlap
+        250        500                   0.9493                  0.9496                 8
+        250        750                   0.8973                  0.9089                 7
+        500        750                   0.9630                  0.9774                 8
+ adjusted_top10_overlap raw_top10_jaccard adjusted_top10_jaccard
+                      7            0.6667                 0.5385
+                      5            0.5385                 0.3333
+                      8            0.6667                 0.6667
+
+TOP 12 ABSOLUTE RANK SHIFTS AT 500 M
+        station_label raw_count_rank activity_adjusted_rank adjusted_minus_raw_rank
+      Kostner [40600]             97                     10                     -87
+      Belmont [41320]             27                    104                      77
+        Damen [41710]             80                      5                     -75
+      Indiana [40300]             70                      6                     -64
+ Conservatory [41670]            102                     38                     -64
+    Roosevelt [41400]             18                     79                      61
+      Addison [41420]             22                     82                      60
+       Wilson [40540]             24                     81                      57
+      Halsted [40940]             59                      2                     -57
+   California [41360]             93                     36                     -57
+      Chicago [41450]             13                     68                      55
+       Racine [40470]             84                     30                     -54
+
+IMPORTANT INTERPRETATION NOTES
+- This measures changes in query rankings; it does NOT estimate an individual passenger's crime risk.
+- CTA entries are an imperfect indicator of nearby pedestrian activity.
+- Nearby reported incidents are not necessarily transit-related.
+- A change of ranking after dividing by ridership is not proof that either ranking is correct.
+- Some station buffers overlap and some stations lie outside the Chicago crime-data coverage.
+- Crime geographic coordinates are approximate; 250m query counts are particularly sensitive.
+- Results are descriptive for 2024, not causal or predictive.
+- Original UCI spatial queries have not yet been linked; that is Step 4B.
