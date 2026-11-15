@@ -1,7 +1,6 @@
 # CSP 571 — The Transit Exposure Paradox
 # STEP 3: 2024 Chicago Crime -> CTA station-centered spatial queries
 #
-
 # --- 0. Libraries and paths --------------------------------------------
 if (!requireNamespace('sf', quietly = TRUE)) {
   stop("Missing R package 'sf'. Run install.packages('sf') once in RStudio, then rerun.")
@@ -177,6 +176,66 @@ if (nrow(top) > 0) {
           xlab = 'Reported incidents in 500 m query (NOT transit-only crimes)')
   par(op)
   dev.off()
+}
+
+# --- Additional plots: 250m and 750m ----------------------------
+
+for (radius in c(250, 750)) {
+  
+  # Filter results for the selected radius
+  r_data <- final[final$query_radius_m == radius, ]
+  
+  # Sort stations by reported crime count
+  r_data <- r_data[
+    order(-r_data$reported_crimes_2024),
+  ]
+  
+  # Distinguish stations sharing the same name
+  labels <- as.character(r_data$station_name)
+  duplicate_names <- duplicated(labels) |
+    duplicated(labels, fromLast = TRUE)
+  
+  labels[duplicate_names] <- paste0(
+    labels[duplicate_names],
+    " (", r_data$station_id[duplicate_names], ")"
+  )
+  
+  # Select top 15 stations
+  top <- head(r_data, 15)
+  top_labels <- head(labels, 15)
+  
+  # Save plot
+  png(
+    file.path(
+      output_dir,
+      paste0("station_crime_", radius, "m_2024.png")
+    ),
+    width = 1300,
+    height = 850,
+    res = 120
+  )
+  
+  op <- par(mar = c(5, 15, 4, 2))
+  
+  barplot(
+    rev(top$reported_crimes_2024),
+    names.arg = rev(top_labels),
+    horiz = TRUE,
+    las = 1,
+    col = "grey55",
+    border = NA,
+    main = paste0(
+      "2024 Reported Crimes Within ",
+      radius,
+      "m of CTA Stations"
+    ),
+    xlab = "Reported incidents (NOT transit-only crimes)"
+  )
+  
+  par(op)
+  dev.off()
+  
+  cat("Generated plot for", radius, "meters\n")
 }
 
 # Rank correlations describe whether station orders differ by metric.

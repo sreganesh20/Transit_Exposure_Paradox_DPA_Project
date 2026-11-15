@@ -1,6 +1,6 @@
 CSP 571 - THE TRANSIT EXPOSURE PARADOX
 STEP 3: 2024 CRIME + CTA STATION SPATIAL QUERY JOIN
-Generated: 2026-11-15 12:16:40.526632
+Generated: 2026-11-15 13:08:23.733056
 Original downloaded crime records: 258641
 2024 crimes before coordinate validation: 258641
 2024 crimes with valid coordinates after ID deduplication: 256583
