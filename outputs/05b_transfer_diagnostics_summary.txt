@@ -1,0 +1,41 @@
+CSP 571 – TRANSIT EXPOSURE PARADOX
+STEP 5B: COVERAGE / EXTRAPOLATION DIAGNOSTICS
+Generated: 2026-11-15 19:19:13.32377
+
+UCI holdout baseline MAE (log): 0.16254
+UCI holdout augmented MAE (log): 0.17187
+
+CTA SUBGROUP METRICS:
+                          group queries stations mean_crimes baseline_mae_log augmented_mae_log
+                        CTA_all     426      142      1131.3           1.5316             1.449
+    CTA_within_training_support     189       63      1779.9           0.8299             0.704
+   CTA_outside_training_support     237       79       614.0           2.0911             2.043
+    CTA_zero_recorded_incidents      54       19         0.0           6.4850             6.512
+ CTA_nonzero_recorded_incidents     372      126      1295.5           0.8125             0.714
+          CTA_supported_nonzero     189       63      1779.9           0.8299             0.704
+                CTA_250m_square     142      142       330.4           1.5115             1.420
+                CTA_500m_square     142      142      1050.7           1.5573             1.480
+                CTA_750m_square     142      142      2012.6           1.5258             1.448
+ baseline_minus_augmented reduction_pct
+                  0.08261        5.3940
+                  0.12599       15.1799
+                  0.04802        2.2966
+                 -0.02666       -0.4111
+                  0.09847       12.1199
+                  0.12599       15.1799
+                  0.09180        6.0735
+                  0.07779        4.9953
+                  0.07824        5.1277
+
+Distinct station IDs with >=1 zero-count query: 19
+Zero-count queries: 54 of 426
+CTA queries in UCI central feature range: 189 of 426
+
+WARNINGS:
+- CTA stations outside Chicago city limits are NOT covered by Chicago Police Department data.
+- A query with 0 crimes is NOT evidence a station is crime-free.
+- Some Chicago city-edge buffers may contain land outside city jurisdiction.
+- Excluding zero counts is ONLY a sensitivity check; official boundary clipping is the next required validation.
+- Within-support uses marginal central ranges for area, longitude and latitude, not a causal or true multivariate support test.
+- A large transfer error may reflect query geography/size, jurisdiction, missing records, and model misspecification.
+- Do not interpret ridership as passenger-level crime exposure.
