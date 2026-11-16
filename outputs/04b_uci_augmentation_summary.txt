@@ -1,0 +1,42 @@
+CSP 571 - THE TRANSIT EXPOSURE PARADOX
+STEP 4B - ENRICH ORIGINAL UCI RECTANGULAR QUERIES
+Generated: 2026-11-15 18:53:36.184702
+Original UCI rows available: 200000
+Sampled UCI rectangles: 800
+New CTA-centered SQUARE queries: 426
+Total augmented workload rows: 1226
+2024 Chicago crime points processed: 256583
+CTA stations used: 142
+UCI State Plane EPSG:3435 center sanity check: 800 of 800 plausible
+
+MEDIAN VALUES BY QUERY GROUP:
+              plot_group area_km2 crimes_2024 stations_inside_query
+ UCI: sampled rectangles  4.42037      2119.5                   1.0
+   CTA: squares +/-250 m  0.25000       204.5                   1.0
+   CTA: squares +/-500 m  1.00000       726.5                   1.0
+   CTA: squares +/-750 m  2.25000      1584.0                   1.5
+
+FRACTION OF QUERIES CONTAINING AT LEAST ONE CTA STATION:
+             query_group fraction_with_cta_station
+ UCI: sampled rectangles                    0.6725
+   CTA: squares +/-250 m                    1.0000
+   CTA: squares +/-500 m                    1.0000
+   CTA: squares +/-750 m                    1.0000
+
+CRITICAL INTERPRETATION:
+- UCI's historical count, SUM, AVG are NOT 2024 labels.
+- New crimes_2024 was computed for both groups using identical incident data.
+- These groups have different areas; raw count comparisons are not controlled comparisons.
+- Our CTA-centered geometry is SQUARE here for consistency with UCI rectangles.
+- Previous 250/500/750m CTA CIRCLES remain separate analyses in Step 3/4A.
+- UCI circular query coordinates are not georeferenced by this script.
+- Overlapping queries share incidents and are not independent observations.
+- CTA station entries are not complete nearby pedestrian exposure.
+- Some CTA stations may be outside Chicago incident-data coverage.
+
+OUTPUT FILES:
+ - data/processed/04b_spatial_query_workloads_2024.csv
+ - data/processed/04b_uci_range_queries_enriched_2024.csv
+ - outputs/04b_uci_query_sample.csv
+ - outputs/04b_query_area_comparison.png
+ - outputs/04b_query_count_comparison.png
