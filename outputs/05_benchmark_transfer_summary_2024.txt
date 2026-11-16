@@ -1,0 +1,73 @@
+CSP 571 - THE TRANSIT EXPOSURE PARADOX
+STEP 5: QUERY ESTIMATION AND SYNTHETIC-TO-TRANSIT TRANSFER
+Generated: 2026-11-15 19:09:42.470826
+Training UCI queries: 660
+Geographically held-out UCI queries: 140
+CTA transfer queries: 426 (across 142 station IDs and three square sizes)
+CTA queries within central 98% UCI training support (area + lon + lat): 189 of 426
+
+MODELS (both fitted ONLY on UCI training rectangles):
+Baseline: log_answer ~ log_area + lat_centered + lon_centered
+Augmented: log_answer ~ log_area + lat_centered + lon_centered + log_station_count +      log_entries
+Preferred by UCI geographically held-out MAE_log1p: Baseline
+
+PREDICTION METRICS:
+      evaluation_set     model n_queries mae_count median_absolute_count_error rmse_count
+ UCI_spatial_holdout  Baseline       140     844.8                       332.9     1545.2
+ UCI_spatial_holdout Augmented       140     792.0                       372.1     1463.9
+             CTA_all  Baseline       426     899.1                       408.3     1566.0
+             CTA_all Augmented       426     823.9                       383.3     1424.1
+     CTA_250m_square  Baseline       142     269.4                       143.5      440.2
+     CTA_250m_square Augmented       142     256.7                       134.4      421.9
+     CTA_500m_square  Baseline       142     829.9                       422.7     1302.7
+     CTA_500m_square Augmented       142     771.2                       416.6     1213.1
+     CTA_750m_square  Baseline       142    1597.8                       877.2     2337.9
+     CTA_750m_square Augmented       142    1443.8                       850.5     2105.9
+ mae_log1p_count  rmsle
+          0.1625 0.2070
+          0.1719 0.2222
+          1.5316 2.5351
+          1.4489 2.5016
+          1.5115 2.2202
+          1.4197 2.1991
+          1.5573 2.6258
+          1.4795 2.5924
+          1.5258 2.7305
+          1.4476 2.6867
+
+AREA-OVERLAP DIAGNOSTIC (area within factor 1.5 of CTA square):
+ cta_square_halfwidth_m cta_area_km2 n_uci_holdout_in_area_band n_cta_queries
+                    250         0.25                          4           142
+                    500         1.00                         16           142
+                    750         2.25                         30           142
+ uci_baseline_mae_log1p uci_augmented_mae_log1p cta_baseline_mae_log1p cta_augmented_mae_log1p
+                     NA                      NA                  1.512                   1.420
+                 0.2211                  0.2211                  1.557                   1.480
+                 0.1575                  0.2098                  1.526                   1.448
+
+CTA PAIRED FEATURE EFFECT:
+Mean baseline-minus-augmented absolute log error: 0.08261
+Approximate station-cluster bootstrap 95% CI: 0.06243 to 0.1038
+(Positive means the augmented model makes smaller errors.)
+
+CRITICAL INTERPRETATION:
+- Outcome is exact 2024 spatial-query count, not historical UCI count.
+- The 800 UCI queries were sampled partly by area; they are not a random sample of all UCI records.
+- UCI test rectangles hold out center-location tiles, but polygons can still overlap tile borders.
+- CTA samples were NEVER used to fit either model; this is an out-of-workload test.
+- Location distributions, query areas, and rectangle aspect ratios differ across workloads.
+- Log-scale errors permit comparisons across count scales; matching area alone does not control geography.
+- Current-year CTA ridership measures activity, not personal crime exposure or causal crime risk.
+- This is contemporaneous query estimation, NOT forecasting future crimes.
+- Bootstrap clusters by station, but neighboring station queries may still overlap geographically.
+- A smaller held-out error suggests better estimation only for the tested sample and split.
+
+OUTPUT FILES:
+data/processed/05_model_predictions_2024.csv
+outputs/05_uci_spatial_split.csv
+outputs/05_evaluation_metrics.csv
+outputs/05_area_overlap_diagnostic.csv
+outputs/05_augmented_model_coefficients.csv
+outputs/05_transfer_error_comparison.png
+outputs/05_cta_predicted_vs_observed.png
+outputs/05_cta_feature_gain_by_radius.png

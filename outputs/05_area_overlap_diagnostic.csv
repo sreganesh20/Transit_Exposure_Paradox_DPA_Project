@@ -1,0 +1,4 @@
+"cta_square_halfwidth_m","cta_area_km2","n_uci_holdout_in_area_band","n_cta_queries","uci_baseline_mae_log1p","uci_augmented_mae_log1p","cta_baseline_mae_log1p","cta_augmented_mae_log1p"
+250,0.25,4,142,NA,NA,1.5115267122674,1.41972342993336
+500,1,16,142,0.221080327104636,0.221127942382356,1.55731359301614,1.47952133729994
+750,2.25,30,142,0.157454379969951,0.209789623849574,1.52581831500965,1.4475787000966
