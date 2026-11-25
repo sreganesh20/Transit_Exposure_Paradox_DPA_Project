@@ -1,0 +1,47 @@
+STEP 7A - COVERAGE-AWARE WORKLOAD INTEGRATION
+Boundary: data/Boundaries_-_City_20261121.geojson
+UCI CRS assumed EPSG:3435 as in Step 4B; intersections use EPSG:26916.
+Coverage tolerance: >=99.99% fully covered; <=0.0001% outside; otherwise partial.
+All original queries, counts and Step 5 spatial split retained.
+
+COVERAGE BY SPLIT:
+               split   coverage_status n_queries pct_of_split zero_queries median_area_km2
+           UCI_train     fully covered       565       85.606            3           3.891
+           UCI_train partially covered        95       14.394            0           9.609
+           UCI_train   outside Chicago         0        0.000            0              NA
+ UCI_spatial_holdout     fully covered       140      100.000            0           4.867
+ UCI_spatial_holdout partially covered         0        0.000            0              NA
+ UCI_spatial_holdout   outside Chicago         0        0.000            0              NA
+        CTA_transfer     fully covered       340       79.812            0           1.000
+        CTA_transfer partially covered        36        8.451            4           2.250
+        CTA_transfer   outside Chicago        50       11.737           50           1.000
+
+EXISTING STEP 5 MODEL ERRORS (no refitting):
+      evaluation_set   coverage_status     model n_queries mae_log1p mae_count
+ UCI_spatial_holdout       all queries  baseline       140    0.1625     844.8
+ UCI_spatial_holdout       all queries augmented       140    0.1719     792.0
+ UCI_spatial_holdout     fully covered  baseline       140    0.1625     844.8
+ UCI_spatial_holdout     fully covered augmented       140    0.1719     792.0
+ UCI_spatial_holdout partially covered  baseline         0        NA        NA
+ UCI_spatial_holdout partially covered augmented         0        NA        NA
+ UCI_spatial_holdout   outside Chicago  baseline         0        NA        NA
+ UCI_spatial_holdout   outside Chicago augmented         0        NA        NA
+        CTA_transfer       all queries  baseline       426    1.5316     899.1
+        CTA_transfer       all queries augmented       426    1.4489     823.9
+        CTA_transfer     fully covered  baseline       340    0.7999     823.2
+        CTA_transfer     fully covered augmented       340    0.6956     760.6
+        CTA_transfer partially covered  baseline        36    1.5121     931.0
+        CTA_transfer partially covered augmented        36    1.4911     822.7
+        CTA_transfer   outside Chicago  baseline        50    6.5207    1392.2
+        CTA_transfer   outside Chicago augmented        50    6.5414    1254.9
+
+FULL-COVERAGE MODELING CANDIDATES:
+UCI training: 565 queries across 19 center blocks
+UCI holdout: 140
+CTA transfer: 340
+Use only UCI training rows for tuning/fitting. Keep the original holdout and CTA transfer untouched.
+Check retained training size and block count before choosing CV folds or nonlinear model complexity.
+Municipal boundary is a coverage proxy; it does not prove complete reporting.
+UCI center-block splitting does not guarantee nonoverlapping query polygons.
+Differences across coverage groups are descriptive, not causal. No zeros were discarded based on count.
+No model was fitted or selected in Step 7A.
