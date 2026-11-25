@@ -1,0 +1,10 @@
+"split","coverage_status","n_queries","pct_of_split","zero_queries","median_area_km2"
+"UCI_train","fully covered",565,85.6060606060606,3,3.89095931507599
+"UCI_train","partially covered",95,14.3939393939394,0,9.60941530385828
+"UCI_train","outside Chicago",0,0,0,NA
+"UCI_spatial_holdout","fully covered",140,100,0,4.8667210308201
+"UCI_spatial_holdout","partially covered",0,0,0,NA
+"UCI_spatial_holdout","outside Chicago",0,0,0,NA
+"CTA_transfer","fully covered",340,79.81220657277,0,1
+"CTA_transfer","partially covered",36,8.45070422535211,4,2.25
+"CTA_transfer","outside Chicago",50,11.7370892018779,50,1

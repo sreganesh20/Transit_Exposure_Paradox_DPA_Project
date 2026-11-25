@@ -1,0 +1,17 @@
+"evaluation_set","coverage_status","model","n_queries","mae_log1p","mae_count"
+"UCI_spatial_holdout","all queries","baseline",140,0.162540126278941,844.768793529927
+"UCI_spatial_holdout","all queries","augmented",140,0.171868966209156,791.992717056231
+"UCI_spatial_holdout","fully covered","baseline",140,0.162540126278941,844.768793529927
+"UCI_spatial_holdout","fully covered","augmented",140,0.171868966209156,791.992717056231
+"UCI_spatial_holdout","partially covered","baseline",0,NA,NA
+"UCI_spatial_holdout","partially covered","augmented",0,NA,NA
+"UCI_spatial_holdout","outside Chicago","baseline",0,NA,NA
+"UCI_spatial_holdout","outside Chicago","augmented",0,NA,NA
+"CTA_transfer","all queries","baseline",426,1.53155287343106,899.059372133272
+"CTA_transfer","all queries","augmented",426,1.44894115577663,823.900014379311
+"CTA_transfer","fully covered","baseline",340,0.799910586332908,823.153084439247
+"CTA_transfer","fully covered","augmented",340,0.695585710006396,760.649866114727
+"CTA_transfer","partially covered","baseline",36,1.5121363583128,931.021158337104
+"CTA_transfer","partially covered","augmented",36,1.49107714516391,822.713624045933
+"CTA_transfer","outside Chicago","baseline",50,6.52070031658367,1392.20964238588
+"CTA_transfer","outside Chicago","augmented",50,6.54142027465542,1254.85522361851
