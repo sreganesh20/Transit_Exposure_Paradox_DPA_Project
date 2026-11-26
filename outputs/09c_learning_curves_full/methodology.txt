@@ -1,0 +1,7 @@
+Fixed full-training-selected hyperparameters; no retuning at smaller sizes.
+One randomly selected anchor per training block, followed by a random permutation of remaining queries; rare blocks are overrepresented at small sizes.
+Each repetition shares its nested subsets across model configurations. RF fitting seed is fixed by the 9A helper; variability reflects training subsampling.
+Evaluation workloads are fixed; no holdout or CTA tuning. Previously unused holdout is a subset, not independent replication.
+The full endpoint reuses the single validated 9A fit per configuration, produced on the teammate's original R environment. It is not a repeated estimate; SD is NA.
+Error bars are descriptive sample-to-sample SD, not confidence intervals. GAM effective basis size may be limited by available distinct predictor values.
+Training blocks are defined by query centers; overlapping query footprints may remain dependent. No causal or significance claims.

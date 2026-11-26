@@ -1,0 +1,2 @@
+input_md5,source_manifest_md5,helper_md5,script_md5,seed,repetitions,sizes,reuse_full,gam_engine,gam_threads,rf_threads,R_version,mgcv_version,ranger_version,data_table_version
+20ec188798d096f2dcbe5c82ed69e3aa,dfacd2460d7f2b72b59c0fbc0aec5bfd,4dbddfe2e552382ce539f1af3055e2bd,85b71102674330536c36424ba124078e,5712026,3,"565,1000,5000,20000,50000,100000",TRUE,bam,4,8,R version 4.5.2 (2025-10-31 ucrt),1.9.5,0.18.0,1.18.6.1
