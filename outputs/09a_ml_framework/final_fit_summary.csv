@@ -1,0 +1,7 @@
+model,training_queries,model_class
+LM-B,565,lm
+LM-A,565,lm
+GAM-B,565,gam
+GAM-A,565,gam
+RF-B,565,ranger
+RF-A,565,ranger

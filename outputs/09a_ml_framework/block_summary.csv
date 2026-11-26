@@ -1,0 +1,7 @@
+workload,model_family,n_blocks,n_queries,improved_blocks,worsened_blocks,tied_blocks,mean_block_improvement,query_weighted_improvement
+CTA_transfer,GAM,50,340,22,28,0,-0.0532776400304708,-0.0332206306639213
+CTA_transfer,LM,50,340,35,15,0,0.0679244423916833,0.079676395128573
+CTA_transfer,RF,50,340,37,13,0,0.105530121805081,0.166782391410188
+UCI_spatial_holdout,GAM,6,140,3,3,0,0.00424152438959462,-0.00494176062929564
+UCI_spatial_holdout,LM,6,140,2,4,0,-0.00598627914098081,-0.00894238430924206
+UCI_spatial_holdout,RF,6,140,3,3,0,-0.00932311714241805,-0.0473736894707501
