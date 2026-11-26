@@ -1,0 +1,2 @@
+input_file,input_md5,seed,n_folds,training_queries,gam_engine,gam_bam_threshold,gam_num_threads,rf_num_threads
+data/processed/08_full_workload_2024.csv,20ec188798d096f2dcbe5c82ed69e3aa,5712026,5,136637,bam,10000,2,4
