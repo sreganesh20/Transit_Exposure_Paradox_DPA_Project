@@ -1,0 +1,51 @@
+STEP 8A: FULL RECTANGULAR WORKLOAD AUGMENTATION
+Total rows: 200426
+Original UCI rows: 200000
+CTA rows: 426
+Fully covered UCI training rows: 136637
+Fully covered UCI holdout rows: 35054
+Previously unused fully covered UCI holdout rows: 34914
+Fully covered CTA rows: 340
+Training blocks: 29
+Elapsed seconds this invocation: 911.2
+All 800 pilot rows passed exact count/coverage-class/split checks and numeric tolerance checks.
+Original UCI CRS inferred EPSG:3435; same polygon reconstruction as pilot, UTM EPSG:26916 for overlay.
+New center blocks assigned to training; original held-out blocks never enter training. Overlapping footprints may share incidents.
+Width/height are native projected dimensions converted to meters; nearest station distance is center-to-station in UTM.
+Coverage is a jurisdiction proxy, not completeness; retain all rows including zeros.
+Historical UCI aggregates are provenance only; never use them as primary 2024 model features.
+
+               split   coverage_status n_queries
+        CTA_transfer     fully covered       340
+ UCI_spatial_holdout     fully covered     35054
+           UCI_train     fully covered    136637
+        CTA_transfer   outside Chicago        50
+           UCI_train   outside Chicago         1
+        CTA_transfer partially covered        36
+ UCI_spatial_holdout partially covered         4
+           UCI_train partially covered     28304
+
+R version 4.5.2 (2025-10-31 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 26200)
+
+Matrix products: default
+  LAPACK version 3.12.1
+
+locale:
+[1] LC_COLLATE=English_India.utf8  LC_CTYPE=English_India.utf8    LC_MONETARY=English_India.utf8
+[4] LC_NUMERIC=C                   LC_TIME=English_India.utf8    
+
+time zone: America/Chicago
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+[1] sf_1.1-3
+
+loaded via a namespace (and not attached):
+ [1] compiler_4.5.2     class_7.3-23       DBI_1.3.0          tools_4.5.2       
+ [5] units_1.0-1        proxy_0.4-29       Rcpp_1.1.2         KernSmooth_2.23-26
+ [9] grid_4.5.2         e1071_1.7-17       classInt_0.4-11   

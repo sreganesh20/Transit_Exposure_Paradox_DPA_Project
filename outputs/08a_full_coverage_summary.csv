@@ -1,0 +1,9 @@
+"split","coverage_status","n_queries"
+"CTA_transfer","fully covered",340
+"UCI_spatial_holdout","fully covered",35054
+"UCI_train","fully covered",136637
+"CTA_transfer","outside Chicago",50
+"UCI_train","outside Chicago",1
+"CTA_transfer","partially covered",36
+"UCI_spatial_holdout","partially covered",4
+"UCI_train","partially covered",28304

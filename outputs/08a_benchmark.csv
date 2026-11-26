@@ -1,0 +1,2 @@
+"n_queries","batch_size","elapsed_seconds","crime_seconds","other_seconds","point_memberships","rough_full_seconds"
+1000,1000,5,4.60000000000036,0.329999999999927,5672943,1000
