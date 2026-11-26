@@ -1,0 +1,7 @@
+model,training_queries,model_class
+LM-B,136637,lm
+LM-A,136637,lm
+GAM-B,136637,bam
+GAM-A,136637,bam
+RF-B,136637,ranger
+RF-A,136637,ranger

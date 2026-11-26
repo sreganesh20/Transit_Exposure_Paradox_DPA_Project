@@ -1,0 +1,30 @@
+Primary analysis uses eligible full coverage only. Positive gains favor augmentation. Relative MAE = count MAE / mean observed count. Bias = predicted minus observed.
+Coverage strata outside full coverage are descriptive, not comparable full-city outcomes. Support flags are marginal percentile bounds, not joint support.
+Intervals are exploratory 95% percentile cluster bootstrap intervals conditional on the fitted models. They do not capture model fitting uncertainty. Spatial overlap between clusters remains possible. Few clusters make intervals especially uncertain. No formal significance or causal claims.
+Area bands are fixed descriptive thresholds in square kilometers. Station clustering is an alternative sensitivity analysis, not independent confirmation.
+
+Observed primary comparisons:
+CTA_transfer / GAM: log MAE gain 0.084539 (7.80%); count MAE gain 140.403 (19.07%); 72.94% of queries improved in absolute log error.
+CTA_transfer / LM: log MAE gain 0.056325 (7.48%); count MAE gain 38.759 (4.98%); 73.24% of queries improved in absolute log error.
+CTA_transfer / RF: log MAE gain 0.214197 (29.90%); count MAE gain 223.904 (30.51%); 65.88% of queries improved in absolute log error.
+UCI_spatial_holdout / GAM: log MAE gain -0.009592 (-6.41%); count MAE gain -81.874 (-9.92%); 41.36% of queries improved in absolute log error.
+UCI_spatial_holdout / LM: log MAE gain -0.013339 (-7.89%); count MAE gain -30.541 (-2.93%); 45.87% of queries improved in absolute log error.
+UCI_spatial_holdout / RF: log MAE gain -0.002449 (-2.06%); count MAE gain -38.659 (-8.31%); 48.44% of queries improved in absolute log error.
+UCI_spatial_holdout: lowest observed log MAE is RF-B (0.118644).
+CTA_transfer: lowest observed log MAE is RF-A (0.502120).
+
+Cluster sensitivity:
+CTA_transfer / GAM / geographic_block: 50 clusters; query-weighted gain 0.084539, exploratory 95% percentile interval [0.032669, 0.135168]; equal-cluster gain 0.054591, interval [0.023639, 0.082507].
+CTA_transfer / LM / geographic_block: 50 clusters; query-weighted gain 0.056325, exploratory 95% percentile interval [0.033345, 0.076558]; equal-cluster gain 0.049561, interval [0.032282, 0.067021].
+CTA_transfer / RF / geographic_block: 50 clusters; query-weighted gain 0.214197, exploratory 95% percentile interval [0.077752, 0.337755]; equal-cluster gain 0.120579, interval [0.058903, 0.185577].
+UCI_spatial_holdout / GAM / geographic_block: 6 clusters; query-weighted gain -0.009592, exploratory 95% percentile interval [-0.013870, 0.018069]; equal-cluster gain 0.002405, interval [-0.008956, 0.015029].
+UCI_spatial_holdout / LM / geographic_block: 6 clusters; query-weighted gain -0.013339, exploratory 95% percentile interval [-0.027895, -0.007483]; equal-cluster gain -0.016291, interval [-0.023720, -0.009579].
+UCI_spatial_holdout / RF / geographic_block: 6 clusters; query-weighted gain -0.002449, exploratory 95% percentile interval [-0.018017, 0.004322]; equal-cluster gain -0.003271, interval [-0.012038, 0.004564].
+CTA_transfer / GAM / station_cluster: 119 clusters; query-weighted gain 0.084539, exploratory 95% percentile interval [0.057270, 0.111316]; equal-cluster gain 0.084368, interval [0.058187, 0.110169].
+CTA_transfer / LM / station_cluster: 119 clusters; query-weighted gain 0.056325, exploratory 95% percentile interval [0.044327, 0.068647]; equal-cluster gain 0.054693, interval [0.043041, 0.066697].
+CTA_transfer / RF / station_cluster: 119 clusters; query-weighted gain 0.214197, exploratory 95% percentile interval [0.155554, 0.274004]; equal-cluster gain 0.219190, interval [0.162107, 0.276706].
+
+Previously unused eligible holdout is a subset of the full holdout, not independent replication.
+GAM: 34914 queries; log MAE gain -6.45%.
+LM: 34914 queries; log MAE gain -7.90%.
+RF: 34914 queries; log MAE gain -2.10%.

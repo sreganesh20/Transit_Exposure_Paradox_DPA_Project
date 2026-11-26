@@ -1,0 +1,7 @@
+model,k,mtry,min_node_size,num_trees,gam_engine
+LM-B,,,,,
+LM-A,,,,,
+GAM-B,10,,,,bam
+GAM-A,10,,,,bam
+RF-B,,2,15,300,
+RF-A,,3,5,300,
